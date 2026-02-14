@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Authors>Daniele Fusi</Authors>
+		<Company>Fusi</Company>
+		<Product>Cadmus</Product>
+		<Description>Miscellaneous parts specific to the Cadmus TES Project.</Description>
+		<Copyright>by Daniele Fusi 2026</Copyright>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<PackageTags>Cadmus;parts</PackageTags>
+		<Version>0.0.1</Version>
+		<FileVersion>0.0.1</FileVersion>
+		<AssemblyVersion>0.0.1</AssemblyVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Cadmus.Core" Version="10.0.2" />
+		<PackageReference Include="Cadmus.Geo.Parts" Version="6.0.0" />
+		<PackageReference Include="Cadmus.Mat.Bricks" Version="7.0.1" />
+		<PackageReference Include="Cadmus.Refs.Bricks" Version="8.0.0" />
+		<PackageReference Include="Cadmus.Seed.Geo.Parts" Version="6.0.1" />
+	</ItemGroup>
+
+</Project>

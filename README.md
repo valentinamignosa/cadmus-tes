@@ -19,10 +19,10 @@ docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64 -t vedph2
 This part lists the resources present in a site. Each resource can contain tag, type, any number of features, location, date, counts, and a free note.
 
 - `resources` (`SiteResource[]`):
-  - `tag` (`string`): e.g. "cava A", "pozzo B".
-  - `type`\* (`string`, 📚 `site-resource-types`)
-  - `features` (`string[]`, 📚 `site-resource-feats` hierarchical) including evidences in their own branch
-  - `location` (`AssertedGeoLocation`: see [brick](https://github.com/vedph/cadmus-bricks-shell-v3/blob/master/projects/myrmidon/cadmus-geo-location/README.md) and its [demo](https://cadmus-bricks-v3.fusi-soft.com/geo/geo-location-editor)):
+  - `type`\* (`string`, 📚 `site-resource-types`): the type of the resource, e.g. "quarry", "mine", "water source", etc.
+  - `tag` (`string`, 📚 `site-resource-tags`): an optional tag or label associated with the object, e.g. "cava A", "pozzo B".
+  - `features` (`string[]`, 📚 `site-resource-features` hierarchical): the list of features for this resource, including evidences in their own branch.
+  - `location` (`AssertedLocation`: see [brick](https://github.com/vedph/cadmus-bricks-shell-v3/blob/master/projects/myrmidon/cadmus-geo-location/README.md) and its [demo](https://cadmus-bricks-v3.fusi-soft.com/geo/geo-location-editor)):
     - `eid` (`string`)
     - `label`\* (`string`)
     - `latitude`\* (`double`)
@@ -51,7 +51,7 @@ This part lists the resources present in a site. Each resource can contain tag, 
         - `tag` (`string` 📚 `doc-reference-tags`)
         - `citation` (`string`)
         - `note` (`string`)
-  - `counts` ([DecoratedCount[]](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md)):
+  - `counts` ([DecoratedCount[]](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md)): collection of decorated counts associated with the resource, e.g. the estimated income in talents, the number of marble blocks found in a quarry, etc.
     - `id`\* (`string` 📚 `decorated-count-ids`)
     - `tag` (`string` 📚 `decorated-count-tags`)
     - `value`\* (`int`)
