@@ -3,9 +3,9 @@ using Cadmus.Core;
 using Cadmus.Geo.Parts;
 using Cadmus.Refs.Bricks;
 using Cadmus.Tes.Parts;
+using Fusi.Antiquity.Chronology;
 using Fusi.Tools.Configuration;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Cadmus.Seed.Tes.Parts;
@@ -30,27 +30,40 @@ public sealed class SiteResourcesPartSeeder : PartSeederBase,
         _options = options;
     }
 
-    private AssertedHistoricalDate GetAssertedHistoricalDate()
+    private static AssertedHistoricalDate GetAssertedHistoricalDate(Faker f)
     {
-        //return new Faker<AssertedHistoricalDate>()
-        //    .RuleFor(d => d.Tag, f => f.Random.Word())
-        //    .RuleFor(d => d.Value, f =>
-        //        [f.PickRandom(_options?.ResourceFeatures
-        //            ?? ["alpha", "beta", "gamma"])])
-        //    .RuleFor(d => d.Certainty, f => f.Random.Number(0, 100))
-        //    .Generate();
+        return (AssertedHistoricalDate)
+            HistoricalDate.Parse($"{f.Random.Number(1, 500)}")!;
     }
 
-    private AssertedLocation GetAssertedLocation()
+    private static AssertedLocation GetAssertedLocation()
     {
-        //return new Faker<AssertedLocation>()
-        //    .RuleFor(l => l.Tag, f => f.Random.Word())
-        //    .RuleFor(l => l.Value, f =>
-        //        [f.PickRandom(_options?.ResourceFeatures
-        //            ?? ["alpha", "beta", "gamma"])])
-        //    .RuleFor(l => l.Latitude, f => f.Address.Latitude())
-        //    .RuleFor(l => l.Longitude, f => f.Address.Longitude())
-        //    .Generate();
+        return new Faker<AssertedLocation>()
+            .RuleFor(l => l.Tag, f => f.Random.Word())
+            .RuleFor(l => l.Value, f =>
+                new Faker<GeoLocation>()
+                    .RuleFor(g => g.Label, f => f.Address.City())
+                    .RuleFor(g => g.Latitude, f => f.Address.Latitude())
+                    .RuleFor(g => g.Longitude, f => f.Address.Longitude())
+                    .Generate())
+            .Generate();
+    }
+
+    private List<DecoratedCount> GetCounts()
+    {
+        return
+        [
+            new()
+            {
+                Id = _options?.CountIds?.Count > 0
+                    ? new Faker().PickRandom(_options.CountIds)
+                    : Guid.NewGuid().ToString(),
+                Tag = _options?.CountTags?.Count > 0
+                    ? new Faker().PickRandom(_options.CountTags)
+                    : new Faker().Random.Word(),
+                Value = new Faker().Random.Number(1, 10)
+            }
+        ];
     }
 
     private List<SiteResource> GetResources(int count, Faker f)
@@ -69,7 +82,7 @@ public sealed class SiteResourcesPartSeeder : PartSeederBase,
                 Features = [f.PickRandom(_options?.ResourceFeatures
                     ?? ["alpha", "beta", "gamma"])],
                 Location = GetAssertedLocation(),
-                Date = GetAssertedHistoricalDate(),
+                Date = GetAssertedHistoricalDate(f),
                 Counts = GetCounts()
             });
         }
