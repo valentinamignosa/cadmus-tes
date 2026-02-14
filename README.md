@@ -52,8 +52,8 @@ This part lists the resources present in a site. Each resource can contain tag, 
         - `citation` (`string`)
         - `note` (`string`)
   - `counts` ([DecoratedCount[]](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md)): collection of decorated counts associated with the resource, e.g. the estimated income in talents, the number of marble blocks found in a quarry, etc.
-    - `id`\* (`string` 📚 `decorated-count-ids`)
-    - `tag` (`string` 📚 `decorated-count-tags`)
+    - `id`\* (`string` 📚 `site-resource-count-ids`)
+    - `tag` (`string` 📚 `site-resource-count-tags`)
     - `value`\* (`int`)
     - `note` (`string`)
   - `note` (`string`)
