@@ -2452,6 +2452,66 @@
           "value": "dirty"
         }
       ]
+    },
+    {
+      "id": "site-resource-features_site-feats@en",
+      "entries": [
+        {
+          "id": "a",
+          "value": "alpha"
+        },
+        {
+          "id": "b",
+          "value": "beta"
+        }
+      ]
+    },
+    {
+      "id": "site-resource-features_site-res@en",
+      "entries": [
+        {
+          "id": "a",
+          "value": "alpha"
+        },
+        {
+          "id": "b",
+          "value": "beta"
+        }
+      ]
+    },
+    {
+      "id": "site-resource-types_site-feats@en",
+      "entries": [
+        {
+          "id": "a",
+          "value": "alpha"
+        },
+        {
+          "id": "b",
+          "value": "beta"
+        }
+      ]
+    },
+    {
+      "id": "site-resource-types_site-res@en",
+      "entries": [
+        {
+          "id": "quarry",
+          "value": "quarry"
+        },
+        {
+          "id": "mine",
+          "value": "mine"
+        },
+        {
+          "id": "salt",
+          "value": "salt source"
+        },
+        {
+          "id": "water",
+          "value": "water source"
+        }
+      ]
     }
   ],
   "seed": {
@@ -2469,7 +2529,7 @@
         "id": "seed.it.vedph.categories:art-ctx",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "funerary", "cultic", "domestic" ]
+          "categories": ["funerary", "cultic", "domestic"]
         }
       },
       {
@@ -2510,63 +2570,63 @@
         "id": "seed.it.vedph.categories:cult-gods",
         "options": {
           "maxCategoriesPerItem": 2,
-          "categories": [ "zeus-131", "dionysos-111", "kybele-123" ]
+          "categories": ["zeus-131", "dionysos-111", "kybele-123"]
         }
       },
       {
         "id": "seed.it.vedph.categories:cult-type",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "altar-300052391", "bothros", "oikos" ]
+          "categories": ["altar-300052391", "bothros", "oikos"]
         }
       },
       {
         "id": "seed.it.vedph.categories:ico-sub",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "horse-46c13141", "zeus-92b1", "hephaestus-92b2" ]
+          "categories": ["horse-46c13141", "zeus-92b1", "hephaestus-92b2"]
         }
       },
       {
         "id": "seed.it.vedph.categories:ins-fn",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "christian-383", "decree-384", "doc-357" ]
+          "categories": ["christian-383", "decree-384", "doc-357"]
         }
       },
       {
         "id": "seed.it.vedph.categories:ins-lng",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "grc", "la" ]
+          "categories": ["grc", "la"]
         }
       },
       {
         "id": "seed.it.vedph.categories:site-feats",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "cults", "resources", "storage" ]
+          "categories": ["cults", "resources", "storage"]
         }
       },
       {
         "id": "seed.it.vedph.categories:site-res",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "clay-source", "metal-mine", "salt-source" ]
+          "categories": ["clay-source", "metal-mine", "salt-source"]
         }
       },
       {
         "id": "seed.it.vedph.categories:site-type",
         "options": {
           "maxCategoriesPerItem": 1,
-          "categories": [ "necropolis", "isolated-tomb", "sacred-area" ]
+          "categories": ["necropolis", "isolated-tomb", "sacred-area"]
         }
       },
       {
         "id": "seed.it.vedph.comment",
         "options": {
-          "languages": [ "en", "it" ],
-          "categories": [ "decree-384", "honorific-69" ]
+          "languages": ["en", "it"],
+          "categories": ["decree-384", "honorific-69"]
         }
       },
       {
@@ -2593,8 +2653,8 @@
       {
         "id": "seed.it.vedph.index-keywords",
         "options": {
-          "indexIds": [ "persons", "places" ],
-          "languages": [ "en", "de", "it", "fr", "sp" ]
+          "indexIds": ["persons", "places"],
+          "languages": ["en", "de", "it", "fr", "sp"]
         }
       },
       {
@@ -2626,8 +2686,8 @@
       {
         "id": "seed.fr.it.vedph.comment",
         "options": {
-          "languages": [ "en", "it" ],
-          "categories": [ "decree-384", "honorific-69" ]
+          "languages": ["en", "it"],
+          "categories": ["decree-384", "honorific-69"]
         }
       },
       {
