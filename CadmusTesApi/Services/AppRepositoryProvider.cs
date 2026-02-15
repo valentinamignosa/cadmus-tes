@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection;
-using Cadmus.Core;
+﻿using Cadmus.Core;
 using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
 using Cadmus.Epigraphy.Parts;
@@ -8,6 +6,9 @@ using Cadmus.General.Parts;
 using Cadmus.Geo.Parts;
 using Cadmus.Mongo;
 using Cadmus.Philology.Parts;
+using Cadmus.Tes.Parts;
+using System;
+using System.Reflection;
 
 namespace CadmusTesApi.Services;
 
@@ -41,7 +42,9 @@ public sealed class AppRepositoryProvider : IRepositoryProvider
             // Cadmus.Epigraphy.Parts
             typeof(EpiScriptsPart).GetTypeInfo().Assembly,
             // Cadmus.Geo.Parts
-            typeof(AssertedLocationsPart).GetTypeInfo().Assembly
+            typeof(AssertedLocationsPart).GetTypeInfo().Assembly,
+            // Cadmus.Tes.Parts
+            typeof(SiteResourcesPart).GetTypeInfo().Assembly
         ]);
 
         _partTypeProvider = new StandardPartTypeProvider(_map);

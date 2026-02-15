@@ -4,6 +4,7 @@ using Cadmus.Seed.Epigraphy.Parts;
 using Cadmus.Seed.General.Parts;
 using Cadmus.Seed.Geo.Parts;
 using Cadmus.Seed.Philology.Parts;
+using Cadmus.Seed.Tes.Parts;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -30,7 +31,9 @@ public sealed class AppPartSeederFactoryProvider : IPartSeederFactoryProvider
             // Cadmus.Seed.Geo.Parts
             typeof(AssertedLocationsPartSeeder).GetTypeInfo().Assembly,
             // Cadmus.Seed.Epigraphy.Parts
-            typeof(EpiScriptsPartSeeder).GetTypeInfo().Assembly
+            typeof(EpiScriptsPartSeeder).GetTypeInfo().Assembly,
+            // Cadmus.Seed.Tes.Parts
+            typeof(SiteResourcesPartSeeder).GetTypeInfo().Assembly
         ];
         TagAttributeToTypeMap map = new();
         map.Add(seedAssemblies);

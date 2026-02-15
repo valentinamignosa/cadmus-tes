@@ -5,8 +5,6 @@ using Cadmus.Seed.Tes.Parts;
 using Fusi.Antiquity.Chronology;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Xunit;
 
 namespace Cadmus.Tes.Parts.Test;
 

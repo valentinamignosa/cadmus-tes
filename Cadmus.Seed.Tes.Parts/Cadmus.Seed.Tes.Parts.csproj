@@ -24,7 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\CadmusTesApi\CadmusTesApi.csproj" />
+	  <ProjectReference Include="..\Cadmus.Tes.Parts\Cadmus.Tes.Parts.csproj" />
 	</ItemGroup>
 
 </Project>

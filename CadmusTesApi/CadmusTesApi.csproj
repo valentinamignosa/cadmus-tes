@@ -46,6 +46,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Cadmus.Seed.Tes.Parts\Cadmus.Seed.Tes.Parts.csproj" />
 	  <ProjectReference Include="..\Cadmus.Tes.Parts\Cadmus.Tes.Parts.csproj" />
 	</ItemGroup>
 

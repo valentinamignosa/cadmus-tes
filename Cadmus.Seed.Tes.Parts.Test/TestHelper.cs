@@ -1,12 +1,12 @@
 ﻿using Cadmus.Tes.Parts;
 using Cadmus.Core;
 using Cadmus.Core.Config;
-using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 
 namespace Cadmus.Seed.Tes.Parts.Test;
 
