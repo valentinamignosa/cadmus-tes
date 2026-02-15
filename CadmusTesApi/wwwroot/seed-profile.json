@@ -334,22 +334,13 @@
           "sortKey": "04"
         },
         {
-          "typeId": "it.vedph.categories",
-          "roleId": "site-res",
-          "name": "resources",
-          "description": "Site resources.",
-          "colorKey": "DCD4A0",
-          "groupKey": "identity",
-          "sortKey": "05"
-        },
-        {
           "typeId": "it.vedph.geo.asserted-toponyms",
           "name": "toponyms",
           "description": "Site toponym(s).",
           "isRequired": true,
           "colorKey": "B4C888",
           "groupKey": "identity",
-          "sortKey": "06"
+          "sortKey": "05"
         },
         {
           "typeId": "it.vedph.asserted-historical-dates",
@@ -357,7 +348,7 @@
           "description": "Historical date(s).",
           "colorKey": "E8A0B8",
           "groupKey": "identity",
-          "sortKey": "07"
+          "sortKey": "06"
         },
         {
           "typeId": "it.vedph.geo.asserted-locations",
@@ -365,7 +356,25 @@
           "description": "Locations.",
           "colorKey": "7DC49C",
           "groupKey": "identity",
+          "sortKey": "07"
+        },
+        {
+          "typeId": "it.vedph.tes.site-resources",
+          "roleId": "site-res",
+          "name": "resources",
+          "description": "Site resources.",
+          "colorKey": "DCD4A0",
+          "groupKey": "content",
           "sortKey": "08"
+        },
+        {
+          "typeId": "it.vedph.tes.site-resources",
+          "roleId": "site-prod",
+          "name": "production",
+          "description": "Site production activities.",
+          "colorKey": "DCD4B0",
+          "groupKey": "content",
+          "sortKey": "09"
         },
         {
           "typeId": "it.vedph.comment",
@@ -373,7 +382,7 @@
           "description": "Comment.",
           "colorKey": "A8D4A8",
           "groupKey": "content",
-          "sortKey": "09"
+          "sortKey": "10"
         },
         {
           "typeId": "it.vedph.note",
@@ -381,7 +390,7 @@
           "description": "Free text note.",
           "colorKey": "ECC4A0",
           "groupKey": "editorial",
-          "sortKey": "10"
+          "sortKey": "11"
         },
         {
           "typeId": "it.vedph.doc-references",
@@ -389,7 +398,7 @@
           "description": "Documental references.",
           "colorKey": "9CC894",
           "groupKey": "editorial",
-          "sortKey": "11"
+          "sortKey": "12"
         }
       ]
     },
@@ -682,6 +691,14 @@
         {
           "id": "it.vedph.pin-links",
           "value": "links"
+        },
+        {
+          "id": "it.vedph.tes.site-resources:site-res",
+          "value": "resources"
+        },
+        {
+          "id": "it.vedph.tes.site-resources:site-prod",
+          "value": "production"
         },
         {
           "id": "it.vedph.token-text",
