@@ -60,7 +60,7 @@ public sealed class SiteResourcesPartSeeder : PartSeederBase,
                     : Guid.NewGuid().ToString(),
                 Tag = _options?.CountTags?.Count > 0
                     ? new Faker().PickRandom(_options.CountTags)
-                    : new Faker().Random.Word(),
+                    : null,
                 Value = new Faker().Random.Number(1, 10)
             }
         ];

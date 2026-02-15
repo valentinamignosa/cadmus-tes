@@ -19,6 +19,7 @@ docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64 -t vedph2
 This part lists the resources present in a site. Each resource can contain tag, type, any number of features, location, date, counts, and a free note.
 
 - `resources` (`SiteResource[]`):
+  - `eid` (`string`): the resource's entity identifier.
   - `type`\* (`string`, 📚 `site-resource-types`): the type of the resource, e.g. "quarry", "mine", "water source", etc.
   - `tag` (`string`, 📚 `site-resource-tags`): an optional tag or label associated with the object, e.g. "cava A", "pozzo B".
   - `features` (`string[]`, 📚 `site-resource-features` hierarchical): the list of features for this resource, including evidences in their own branch.

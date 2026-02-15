@@ -11,6 +11,11 @@ namespace Cadmus.Tes.Parts;
 public class SiteResource
 {
     /// <summary>
+    /// The entity identifier for this resource, if any.
+    /// </summary>
+    public string? Eid { get; set; }
+
+    /// <summary>
     /// The type of the resource, e.g. "quarry", "mine", "water source", etc.
     /// Usually from thesaurus <c>site-resource-types</c>.
     /// </summary>
@@ -57,7 +62,8 @@ public class SiteResource
     public override string ToString()
     {
         StringBuilder sb = new();
-        sb.Append(Type);
+        if (!string.IsNullOrEmpty(Eid)) sb.Append($"#{Eid} ");
+        sb.Append('[').Append(Type).Append(']');
         if (!string.IsNullOrEmpty(Tag)) sb.Append($" ({Tag})");
         if (Features != null && Features.Count > 0)
             sb.Append($": {string.Join(", ", Features)}");

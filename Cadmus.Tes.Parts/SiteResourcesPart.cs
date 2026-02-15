@@ -32,22 +32,29 @@ public sealed class SiteResourcesPart : PartBase
 
         if (Resources?.Count > 0)
         {
-            HashSet<string> types = [], locLabels = [];
+            HashSet<string> eids = [], types = [], locEids = [], locLabels = [];
             HashSet<double> dateValues = [];
 
             foreach (SiteResource entry in Resources)
             {
+                if (!string.IsNullOrEmpty(entry.Eid)) eids.Add(entry.Eid);
                 types.Add(entry.Type);
 
                 if (entry.Location != null)
+                {
                     locLabels.Add(entry.Location.Value.Label);
+                    if (!string.IsNullOrEmpty(entry.Location.Value.Eid))
+                        locEids.Add(entry.Location.Value.Eid);
+                }
 
                 if (entry.Date is not null)
                     dateValues.Add(entry.Date.GetSortValue());
             }
 
+            builder.AddValues("eid", eids);
             builder.AddValues("type", types);
-            builder.AddValues("place", locLabels);
+            builder.AddValues("loc-eid", locEids);
+            builder.AddValues("loc-label", locLabels);
             foreach (double dateValue in dateValues)
                 builder.AddValue("date-value", dateValue);
         }
@@ -67,12 +74,20 @@ public sealed class SiteResourcesPart : PartBase
                "tot-count",
                "The total count of entries."),
             new DataPinDefinition(DataPinValueType.String,
+               "eid",
+               "The EIDs of site resources.",
+               "M"),
+            new DataPinDefinition(DataPinValueType.String,
                "type",
                "The distinct types of site resources.",
                "M"),
             new DataPinDefinition(DataPinValueType.String,
-                "place",
-                "The distinct labels of the place names of site resources.",
+                "loc-eid",
+                "The EIDs of the locations of site resources.",
+                "M"),
+            new DataPinDefinition(DataPinValueType.String,
+                "loc-label",
+                "The distinct labels of the locations of site resources.",
                 "M"),
             new DataPinDefinition(DataPinValueType.Decimal,
                 "date-value",
