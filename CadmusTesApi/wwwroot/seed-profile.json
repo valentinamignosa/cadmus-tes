@@ -2454,7 +2454,7 @@
       ]
     },
     {
-      "id": "site-resource-features_site-feats@en",
+      "id": "site-resource-features_site-prod@en",
       "entries": [
         {
           "id": "a",
@@ -2480,7 +2480,7 @@
       ]
     },
     {
-      "id": "site-resource-types_site-feats@en",
+      "id": "site-resource-types_site-prod@en",
       "entries": [
         {
           "id": "a",
@@ -2665,6 +2665,20 @@
       },
       {
         "id": "seed.it.vedph.physical-states"
+      },
+      {
+        "id": "seed.it.vedph.tes.site-resources:site-prod",
+        "options": {
+          "resourceTypes": ["a", "b"],
+          "resourceFeatures": ["a", "b"]
+        }
+      },
+      {
+        "id": "seed.it.vedph.tes.site-resources:site-res",
+        "options": {
+          "resourceTypes": ["quarry", "mine", "salt", "water"],
+          "resourceFeatures": ["a", "b"]
+        }
       },
       {
         "id": "seed.it.vedph.token-text"
