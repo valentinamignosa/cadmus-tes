@@ -1,5 +1,8 @@
 ﻿using Cadmus.Core;
+using Cadmus.Geo.Parts;
+using Cadmus.Refs.Bricks;
 using Cadmus.Seed.Tes.Parts;
+using Fusi.Antiquity.Chronology;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,23 +79,78 @@ public class SiteResourcesPartTest
 
         for (int n = 1; n <= 3; n++)
         {
-            // TODO add entry to part setting its pin-related
-            // properties in a predictable way, so we can test them
+            bool odd = (n & 1) == 1;
+            part.Resources.Add(new SiteResource
+            {
+                Eid = $"r{n}",
+                Type = odd ? "t-odd" : "t-even",
+                Features = [odd ? "f-odd" : "f-even"]
+            });
+            if (n == 1)
+            {
+                part.Resources[0].Location = new AssertedLocation
+                {
+                    Value = new GeoLocation
+                    {
+                        Eid = "loc1",
+                        Latitude = 12.34,
+                        Longitude = 56.78,
+                        Label = "Location 1"
+                    }
+                };
+                part.Resources[0].Date = new AssertedHistoricalDate(
+                    HistoricalDate.Parse("100 BC")!);
+            }
         }
 
         List<DataPin> pins = [.. part.GetDataPins(null)];
 
-        Assert.Equal(5, pins.Count);
+        Assert.Equal(11, pins.Count);
 
         DataPin? pin = pins.Find(p => p.Name == "tot-count");
         Assert.NotNull(pin);
         TestHelper.AssertPinIds(part, pin!);
         Assert.Equal("3", pin!.Value);
 
-        // TODO: assert counts and values e.g.:
-        // pin = pins.Find(p => p.Name == "pos-bottom-count");
-        // Assert.NotNull(pin);
-        // TestHelper.AssertPinIds(part, pin!);
-        // Assert.Equal("2", pin.Value);
+        // eid's
+        for (int n = 1; n <= 3; n++)
+        {
+            pin = pins.Find(p => p.Name == "eid" && p.Value == $"r{n}");
+            Assert.NotNull(pin);
+            TestHelper.AssertPinIds(part, pin!);
+        }
+
+        // types
+        pin = pins.Find(p => p.Name == "type" && p.Value == "t-odd");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        pin = pins.Find(p => p.Name == "type" && p.Value == "t-even");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        // features
+        pin = pins.Find(p => p.Name == "feature" && p.Value == "f-odd");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        pin = pins.Find(p => p.Name == "feature" && p.Value == "f-even");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        // loc-eid
+        pin = pins.Find(p => p.Name == "loc-eid" && p.Value == "loc1");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        // loc-label
+        pin = pins.Find(p => p.Name == "loc-label" && p.Value == "Location 1");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        // date-value
+        pin = pins.Find(p => p.Name == "date-value" && p.Value == "-100");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
     }
 }

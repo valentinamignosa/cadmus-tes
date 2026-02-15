@@ -32,13 +32,20 @@ public sealed class SiteResourcesPart : PartBase
 
         if (Resources?.Count > 0)
         {
-            HashSet<string> eids = [], types = [], locEids = [], locLabels = [];
+            HashSet<string> eids = [], types = [], features = [],
+                locEids = [], locLabels = [];
             HashSet<double> dateValues = [];
 
             foreach (SiteResource entry in Resources)
             {
                 if (!string.IsNullOrEmpty(entry.Eid)) eids.Add(entry.Eid);
                 types.Add(entry.Type);
+
+                if (entry.Features?.Count > 0)
+                {
+                    foreach (string feature in entry.Features)
+                        features.Add(feature);
+                }
 
                 if (entry.Location != null)
                 {
@@ -53,6 +60,7 @@ public sealed class SiteResourcesPart : PartBase
 
             builder.AddValues("eid", eids);
             builder.AddValues("type", types);
+            builder.AddValues("feature", features);
             builder.AddValues("loc-eid", locEids);
             builder.AddValues("loc-label", locLabels);
             foreach (double dateValue in dateValues)
@@ -80,6 +88,10 @@ public sealed class SiteResourcesPart : PartBase
             new DataPinDefinition(DataPinValueType.String,
                "type",
                "The distinct types of site resources.",
+               "M"),
+            new DataPinDefinition(DataPinValueType.String,
+               "feature",
+               "The distinct features of site resources.",
                "M"),
             new DataPinDefinition(DataPinValueType.String,
                 "loc-eid",

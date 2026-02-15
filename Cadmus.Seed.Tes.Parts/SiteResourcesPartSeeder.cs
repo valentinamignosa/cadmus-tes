@@ -32,8 +32,8 @@ public sealed class SiteResourcesPartSeeder : PartSeederBase,
 
     private static AssertedHistoricalDate GetAssertedHistoricalDate(Faker f)
     {
-        return (AssertedHistoricalDate)
-            HistoricalDate.Parse($"{f.Random.Number(1, 500)}")!;
+        return new AssertedHistoricalDate(
+            HistoricalDate.Parse($"{f.Random.Number(1, 500)}")!);
     }
 
     private static AssertedLocation GetAssertedLocation()
