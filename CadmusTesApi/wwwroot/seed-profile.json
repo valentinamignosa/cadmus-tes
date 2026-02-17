@@ -2454,47 +2454,138 @@
       ]
     },
     {
-      "id": "site-resource-features_site-prod@en",
+        "id": "site-resource-features_site-prod@en",
+        "entries": [
+    { 
+        "id": "kilns", 
+        "value": "kilns" 
+     },
+    { 
+        "id": "furnaces", 
+        "value": "furnaces" 
+     },
+    { 
+        "id": "slag", 
+        "value": "slag" 
+     },
+    { 
+        "id": "wasters", 
+        "value": "wasters" 
+     },
+    { 
+        "id": "tools", 
+        "value": "tools" 
+     },
+    { 
+        "id": "unfinished-objects", 
+        "value": "unfinished objects" 
+     },
+    { 
+        "id": "production-waste", 
+        "value": "production waste" 
+     },
+    { 
+        "id": "marked-objects", 
+        "value": "objects with marks" 
+     },
+    { 
+        "id": "workshop-installations", 
+        "value": "workshop installations" 
+     },
+    { 
+        "id": "household-scale", 
+        "value": "household scale" 
+     },
+    { 
+        "id": "workshop-scale", 
+        "value": "workshop scale" 
+     },
+    { 
+        "id": "uncertain", 
+        "value": "uncertain" }
+  ]
+},
+{
+      "id": "site-resource-features_site-res@en", 
       "entries": [
-        {
-          "id": "a",
-          "value": "alpha"
-        },
-        {
-          "id": "b",
-          "value": "beta"
-        }
-      ]
-    },
-    {
-      "id": "site-resource-features_site-res@en",
-      "entries": [
-        {
-          "id": "a",
-          "value": "alpha"
-        },
-        {
-          "id": "b",
-          "value": "beta"
-        }
-      ]
-    },
-    {
-      "id": "site-resource-types_site-prod@en",
-      "entries": [
-        {
-          "id": "a",
-          "value": "alpha"
-        },
-        {
-          "id": "b",
-          "value": "beta"
-        }
-      ]
-    },
-    {
+    { 
+        "id": "extraction-installations", 
+        "value": "extraction installations" 
+     },
+    { 
+        "id": "extraction-traces", 
+        "value": "extraction traces" 
+     },
+    { 
+        "id": "processing-traces", 
+        "value": "processing traces" 
+     },
+    { 
+        "id": "slag", 
+        "value": "slag" 
+     },
+    { 
+        "id": "tool-marks", 
+        "value": "tool marks" 
+     },
+    { 
+        "id": "unfinished-products", 
+        "value": "unfinished products" 
+     },
+    { 
+        "id": "epigraphic-evidence", 
+        "value": "epigraphic evidence" 
+     },
+    { 
+        "id": "archaeological-assemblage", 
+        "value": "archaeological assemblage" 
+     }
+    ]
+  },
+  {
+        "id": "site-resource-types_site-prod@en", 
+        "entries": [
+    { 
+        "id": "ceramic-production", 
+        "value": "ceramic production" 
+     },
+    { 
+        "id": "metalworking", 
+        "value": "metalworking" 
+     },
+    { 
+        "id": "textile-production", 
+        "value": "textile production" 
+     },
+    { 
+        "id": "stone-working", 
+        "value": "stone working" 
+     },
+    { 
+        "id": "food-processing", 
+        "value": "food processing" 
+     },
+    { 
+        "id": "salt-production", 
+        "value": "salt production" 
+     },
+    { 
+        "id": "agriculture", 
+        "value": "agriculture" 
+     },
+    { 
+        "id": "glassworking", 
+        "value": "glassworking" 
+     }
+    ]
+  },
+  {
       "id": "site-resource-types_site-res@en",
       "entries": [
+        {
+          "id": "clay",
+          "value": "clay"
+        },
         {
           "id": "quarry",
           "value": "quarry"
