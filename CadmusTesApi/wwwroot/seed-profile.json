@@ -2510,7 +2510,7 @@
       "id": "site-resource-features_site-res@en",
       "entries": [
         {
-          "id": "extraction-installations",
+          "id": "extraction-install",
           "value": "extraction installations"
         },
         {
@@ -2538,7 +2538,7 @@
           "value": "epigraphic evidence"
         },
         {
-          "id": "archaeological-assemblage",
+          "id": "archaeological-asm",
           "value": "archaeological assemblage"
         }
       ]
@@ -2761,15 +2761,15 @@
       {
         "id": "seed.it.vedph.tes.site-resources:site-prod",
         "options": {
-          "resourceTypes": [ "a", "b" ],
-          "resourceFeatures": [ "a", "b" ]
+          "resourceTypes": [ "ceramic-production", "metalworking" ],
+          "resourceFeatures": [ "kilns", "furnaces" ]
         }
       },
       {
         "id": "seed.it.vedph.tes.site-resources:site-res",
         "options": {
           "resourceTypes": [ "quarry", "mine", "salt", "water" ],
-          "resourceFeatures": [ "a", "b" ]
+          "resourceFeatures": [ "extraction-install", "slag" ]
         }
       },
       {
