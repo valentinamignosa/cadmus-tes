@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Version>0.0.1</Version>
-		<FileVersion>0.0.1</FileVersion>
-		<AssemblyVersion>0.0.1</AssemblyVersion>
+		<Version>0.0.2</Version>
+		<FileVersion>0.0.2</FileVersion>
+		<AssemblyVersion>0.0.2</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -19,9 +19,9 @@
 		<PackageReference Include="Cadmus.Graph" Version="10.0.3" />
 		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.3" />
 		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.3" />
-		<PackageReference Include="Cadmus.Febo.Services" Version="3.0.1" />
 		<PackageReference Include="Cadmus.Seed" Version="10.1.2" />
 		<PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="9.0.2" />
+		<PackageReference Include="Cadmus.Seed.Epigraphy.Parts" Version="9.0.2" />
 		<PackageReference Include="Cadmus.Seed.General.Parts" Version="8.0.2" />
 		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="12.0.2" />
 		<PackageReference Include="Fusi.Antiquity" Version="6.0.0" />
