@@ -7,7 +7,7 @@ Backend for the Cadmus TES project.
 ```sh
 docker buildx create --use
 
-docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64 -t vedph2020/cadmus-tes-api:0.0.2 -t vedph2020/cadmus-tes-api:latest --push
+docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64 -t vedph2020/cadmus-tes-api:0.0.3 -t vedph2020/cadmus-tes-api:latest --push
 ```
 
 (replace with the current version).
@@ -86,3 +86,9 @@ This part lists the resources present in a site. Each resource can contain tag, 
 | orthography= | X              |                          |                      |                                |             |
 | ligatures=   | X              |                          |                      |                                |             |
 | links=       | X              |                          |                      |                                |             |
+
+### History
+
+### 0.0.3
+
+- 2026-03-03: updated packages.
