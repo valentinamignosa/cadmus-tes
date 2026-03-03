@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Tes.Cli.Commands;
 
 namespace Tes.Cli;
 
@@ -70,9 +71,8 @@ public static class Program
             CommandApp app = new();
             app.Configure(config =>
             {
-                // TODO add commands like:
-                // config.AddCommand<FixIndexCommand>("fix-index")
-                //      .WithDescription("Fix malformed HTML ThlL index");
+                config.AddCommand<ImportInscriptionsCommand>("import-inscr")
+                      .WithDescription("Import inscriptions from XLSX into MongoDB.");
             });
 
             int result = await app.RunAsync(args);
