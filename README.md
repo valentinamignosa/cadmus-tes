@@ -87,8 +87,47 @@ This part lists the resources present in a site. Each resource can contain tag, 
 | ligatures=   | X              |                          |                      |                                |             |
 | links=       | X              |                          |                      |                                |             |
 
+
+## External Links Policy
+
+External links connect a TES item to an authoritative external resource.
+
+## Usage
+
+Use external links for:
+
+- Authority databases (e.g. Pleiades, GeoNames)
+
+- Epigraphic databases (e.g. EDR, PHI, Trismegistos)
+
+- Archaeological repositories (e.g. Arachne, ADS)
+
+- Iconographic databases (e.g. LIMC, Beazley Archive, CVA)
+
+- Digital scholarly projects and online reference works
+
+Each external link must include:
+
+- `label` – human-readable description
+- `gid` – full, stable URL of the external record
+- `scope` – lowercase identifier of the provider (controlled list)
+
+### GID Rule
+
+The `gid` must contain the complete and stable URL of the external record.
+
+Numeric identifiers alone should be avoided unless explicitly standardized.
+
+### Scope Convention
+
+Scopes must be lowercase and consistent across the project (e.g. `pleiades`, `edr`, `tm`, `zenon`, `limc`, etc.).
+
+External lookup tools (when available) are optional UI helpers and do not affect the stored data model.
+
+
 ### History
 
 ### 0.0.3
 
-- 2026-03-03: updated packages.
+- 2026-03-03: updated packages
+- 2026-03-03: added External Links Policy section
