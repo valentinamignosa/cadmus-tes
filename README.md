@@ -87,6 +87,57 @@ This part lists the resources present in a site. Each resource can contain tag, 
 | ligatures=   | X              |                          |                      |                                |             |
 | links=       | X              |                          |                      |                                |             |
 
+## TES Import
+
+The CLI app `tes-tool` in this solution is used to import inscriptions from an Excel file via the Proteus framework. Source Excel files have the following columns (▶️ is the mapping into the above model for inscription items; \* marks a column which is always filled with a value):
+
+(1) **A** (`ID`)\*: the ISicily inscription ID ▶️ `links`: add an external metadata link.
+
+(2) **B** (`Date notBefore`)\*: a numeric value representing a year for the from-date, negative if BC. This is imported together with C.
+
+(3) **C** (`Date notAfter`)\*: a numeric value representing a year for the to-date, negative if BC. ▶️ `dates` as a range B-C.
+
+(4) **D** (`Site of origin (ancient name)`)\*: ??
+
+(5) **E** (`Site of origin (modern name)`)\*: ??
+
+(6) **F** (`Origin latitude`)\*: latitude. This is imported together with G.
+
+(7) **G** (`Origin longitude`)\*: longitude ▶️ `locations` together with F. F-G are the first location which refers to origin.
+
+(8) **H** (`Provenance latitude`): latitude. This is imported together with I.
+
+(9) **I** (`Provenance longitude`): longitude ▶️ `locations` together with H. H-I are the second location which refers to provenance.
+
+(10) **J** (`Material`)\*: ▶️ `support`.`material` mapped to thesaurus 📚 `epi-support-materials`.
+
+(11) **K** (`Object type`): when not specified the value is `N/A`. ▶️ `support`.`objectType` mapped to thesaurus 📚 `epi-support-object-types`.
+
+(12) **L** (`Type`): when not specified the value is `N/A`. ▶️ `categories:ins-fn` mapped to thesaurus 📚 `categories_ins-fn`.
+
+(13) **M** (`Execution type 1`): e.g. `chiselled` ▶️ `technique`.`techniques` mapped to thesaurus 📚 `epi-technique-types`.
+
+(14) **N** (`Execution type 2`): as for M.
+
+(15) **O** (`Language`)\*: ▶️ `categories:ins-lng` mapped to thesaurus 📚 `categories_ins-lng`.
+
+(16) **P** (`Repository name`): repository name (e.g. `Antiquarium di Megara Hyblaia`) ▶️ `metadata`.`preservation-place`.
+
+(17) **Q** (`Inventory number`): inventory number (e.g. `104387`) ▶️ `metadata`.`inventory-nr`.
+
+(18) **R** (`Edition (interpretive)`): text (Leiden) ▶️ text splitting lines at ??.
+
+List of target thesauri:
+
+- [categories part](https://github.com/vedph/cadmus-general/blob/master/docs/categories.md):
+  - `categories_ins-fn`
+  - `categories_ins-lng`
+- [epigraphic support part](https://github.com/vedph/cadmus-epigraphy/blob/master/docs/epi-support.md):
+  - `epi-support-materials`
+  - `epi-support-object-types`
+- [epigraphic technique part](https://github.com/vedph/cadmus-epigraphy/blob/master/docs/epi-technique.md):
+  - `epi-technique-types`
+
 ### History
 
 ### 0.0.3
