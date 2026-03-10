@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Proteus.Entries.Config;
+using Proteus.Entries.Pipeline;
 using Proteus.Entries.Regions;
 using Proteus.Extras;
 using Serilog;
@@ -37,7 +38,7 @@ internal static class PipelineFactoryProvider
 
             EntryPipelineFactory.ConfigureServices(services,
                 // Proteus.Entries
-                typeof(ExcelDumpEntryRegionParser).Assembly,
+                typeof(CmdEntrySetBoundaryDetector).Assembly,
                 // Proteus.Extras
                 typeof(ExcelEntryReader).Assembly,
                 // Cadmus.Import.Proteus

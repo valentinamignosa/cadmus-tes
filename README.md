@@ -140,6 +140,8 @@ List of target thesauri:
 
 ### History
 
+- 2026-03-10: updated packages.
+
 ### 0.0.3
 
 - 2026-03-03: updated packages.
